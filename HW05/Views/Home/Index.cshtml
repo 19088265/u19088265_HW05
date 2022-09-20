@@ -19,14 +19,14 @@
         </h2>
     </div>
 
-    <div class="dropdown-divider" style="margin-bottom:15px"></div>
+    <div class="dropdown-divider" style="margin-bottom:20px"></div>
 
     <!--Operation field-->
     <div>
         <form>
             <div class="form-row">
                 <div class="col-lg-4">
-                    <input type="text" class="form-control" placeholder="Search Book Name" style="width:300px" />
+                    <input type="text" class="form-control" placeholder="Search Book Name" style="width:250px" />
                 </div>
 
                 <!--Select book type dropdown-->
@@ -63,7 +63,35 @@
         </form>
     </div>
 
-    <div>
 
+    <!--Book table-->
+    <div>
+        <table class="table" style="margin-top:20px">
+            <thead>
+                <tr style="height:80px">
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Page Count</th>
+                    <th scope="col">Points</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>A Daughter of the Snows</td>
+                    <td>London</td>
+                    <td>Guide</td>
+                    <td>199</td>
+                    <td>84</td>
+                    <td>Status</td>
+                    <td>
+                        <button type="button" class="btn btn-primary">View</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>

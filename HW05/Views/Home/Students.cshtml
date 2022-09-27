@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Students";
+}
+
+<body style="margin-left:-150px">
+
+    <div>
+        <h2 style="margin-top:50px; margin-bottom:30px">
+            Students
+        </h2>
+    </div>
+
+    <div class="dropdown-divider" style="margin-bottom:20px"></div>
+
+    <!--Operation field-->
+    <div>
+        <form>
+            <div class="form-row">
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" placeholder="Search Student Name" style="width:250px" />
+                </div>
+
+                <!--Select class dropdown-->
+                <div class="col">
+                    <select class="form-control">
+                        <option selected>Select Class</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+
+                </div>
+
+                <!--Search button-->
+                <div class="col">
+                    <button type="button" class="btn btn-success" style="width:150px">Search</button>
+                </div>
+
+                <!--Clear button-->
+                <div class="col">
+                    <button type="button" class="btn btn-danger" style="width:150px">Clear</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+

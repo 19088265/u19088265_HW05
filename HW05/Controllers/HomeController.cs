@@ -18,5 +18,11 @@ namespace HW05.Controllers
 
             return View();
         }
+
+        public ActionResult Students()
+        {
+
+            return View();
+        }
     }
 }

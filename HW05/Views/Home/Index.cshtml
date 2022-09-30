@@ -1,4 +1,5 @@
-﻿
+﻿@model List<HW05.Models.BooksViewModel>
+@using HW05.Models;
 @{
     ViewBag.Title = "Home Page";
 }
@@ -80,18 +81,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>A Daughter of the Snows</td>
-                    <td>London</td>
-                    <td>Guide</td>
-                    <td>199</td>
-                    <td>84</td>
-                    <td>Status</td>
-                    <td>
-                        <button type="button" class="btn btn-primary">View</button>
-                    </td>
-                </tr>
+                @foreach (BooksViewModel book in Model)
+                 {
+                    <tr>
+                        <th scope="row">@book.bookID</th>
+                        <td>@book.bookName</td>
+                        <td>None</td>
+                        <td>@book.identif.id</td>
+                        <td>@book.pageCount</td>
+                        <td>@book.point</td>
+                        <td>Out</td>
+                        <td>
+                            <button type="button" class="btn btn-primary">View</button>
+                        </td>
+                    </tr>
+                 }
+ 
             </tbody>
         </table>
     </div>

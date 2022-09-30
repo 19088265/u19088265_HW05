@@ -7,6 +7,8 @@ namespace HW05.Models
 {
     public class BooksViewModel
     {
+
+        //Properties
         public int bookID { get; set; }
 
         public string bookName { get; set; }
@@ -16,7 +18,14 @@ namespace HW05.Models
         public int point { get; set; }
 
         public int authorID { get; set; }
+        public TypeViewModel descrip { get; set; }
 
-        public int typeID { get; set; }
+        public TypeViewModel identif { get; set; }
+
+        public BooksViewModel()
+        {
+            descrip = new TypeViewModel();
+            identif = new TypeViewModel();
+        }
     }
 }

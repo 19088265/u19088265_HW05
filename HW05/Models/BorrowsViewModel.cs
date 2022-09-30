@@ -7,6 +7,6 @@ namespace HW05.Models
 {
     public class BorrowsViewModel
     {
-
+        
     }
 }

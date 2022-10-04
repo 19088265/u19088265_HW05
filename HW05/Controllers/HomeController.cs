@@ -22,7 +22,7 @@ namespace HW05.Controllers
 
                 //Read table
                 SqlCommand myCommand = new SqlCommand(
-                    "SELECT books.bookId, books.name, books.pagecount, books.point, authors.authorName, books.typeId, types.name FROM books INNER JOIN types ON books.typeId = types.typeID INNER JOIN authors ON books.authorID = authors.authorID ", myConnection);
+                    "SELECT books.bookId, books.name, books.pagecount, books.point, authors.authorName, books.typeId, types.name FROM books INNER JOIN types ON books.typeId = types.typeID", myConnection);
                 SqlDataReader myReader = myCommand.ExecuteReader();
 
                 while(myReader.Read())
@@ -30,14 +30,14 @@ namespace HW05.Controllers
                     BooksViewModel book = new BooksViewModel();
                     book.bookID = (int)myReader["bookId"];
                     book.bookName = myReader["name"].ToString();
-                    book.aSurname.surname = myReader["name"].ToString();
+                    //book.aSurname.surname = myReader["name"].ToString();
                     book.pageCount = (int)myReader["pagecount"];
                     book.point = (int)myReader["point"];
-                    //book.authorID = (int)myReader["authorId"];
-                    book.identif.id = (int)myReader["typeId"];
-                    book.descrip.name = myReader["name"].ToString();
+                    book.authorID = (int)myReader["authorId"];
+                    //book.identif.id = (int)myReader["typeId"];
+                   //book.descrip.name = myReader["name"].ToString();
                     bookList.Add(book);
-                    var orderByID = bookList.OrderByDescending(s => s.bookID);
+                    //var orderByID = bookList.OrderByDescending(s => s.bookID);
                 }
             }
             catch(Exception err)

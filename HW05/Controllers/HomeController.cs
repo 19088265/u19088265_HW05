@@ -10,7 +10,7 @@ namespace HW05.Controllers
 {
     public class HomeController : Controller
     {
-        SqlConnection myConnection = new SqlConnection("Data Source=HOPGD-43\\SYSARCH1;Initial Catalog=Library;Integrated Security=True");
+        SqlConnection myConnection = new SqlConnection("Data Source=HOPSI-39\SYSARCH1;Initial Catalog=Library;Integrated Security=True");
 
 
         public ActionResult Index()

@@ -81,13 +81,14 @@
                 </tr>
             </thead>
             <tbody>
+
                 @foreach (BooksViewModel book in Model)
                  {
                     <tr>
-                        <th scope="row">@book.bookID</th>
+                        <td scope="row">@book.bookID</td>
                         <td>@book.bookName</td>
                         <td>None</td>
-                        <td>@book.identif.id</td>
+                        <td>None</td>
                         <td>@book.pageCount</td>
                         <td>@book.point</td>
                         <td>Out</td>
@@ -96,7 +97,7 @@
                         </td>
                     </tr>
                  }
- 
+
             </tbody>
         </table>
     </div>

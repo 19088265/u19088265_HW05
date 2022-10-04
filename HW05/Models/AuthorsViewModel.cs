@@ -12,5 +12,6 @@ namespace HW05.Models
         public string name { get; set; }
 
         public string surname { get; set; }
+
     }
 }

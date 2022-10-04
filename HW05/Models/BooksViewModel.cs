@@ -22,10 +22,17 @@ namespace HW05.Models
 
         public TypeViewModel identif { get; set; }
 
+        public AuthorsViewModel aID { get; set; }
+        public AuthorsViewModel aName { get; set; }
+        public AuthorsViewModel aSurname { get; set; }
+
         public BooksViewModel()
         {
             descrip = new TypeViewModel();
             identif = new TypeViewModel();
+            aID = new AuthorsViewModel();
+            aName = new AuthorsViewModel();
+            aSurname = new AuthorsViewModel();
         }
     }
 }

@@ -68,7 +68,7 @@ namespace HW05.Controllers
                     book.Type.Name = myReader["nname"].ToString();
                     book.pageCount = (int)myReader["pagecount"];
                     book.point = (int)myReader["point"];
-                    bookList.Add(book);
+                    //bookList.Add(book);
                 }
             }
             catch

@@ -10,7 +10,7 @@ namespace HW05.Controllers
 {
     public class HomeController : Controller
     {
-        SqlConnection myConnection = new SqlConnection("Data Source=HOPSI-39\\SYSARCH1;Initial Catalog=Library;Integrated Security=True");
+        SqlConnection myConnection = new SqlConnection("Data Source=HOPSI-39\\SYSARCH1;Integrated Security=True");
 
 
         public ActionResult Index()
@@ -22,7 +22,7 @@ namespace HW05.Controllers
 
                 //Read table
                 SqlCommand myCommand = new SqlCommand(
-                    "SELECT books.bookId, books.name, books.pagecount, books.point, books.typeId, types.name FROM books INNER JOIN types ON books.typeId = types.typeId ", myConnection);
+                    "SELECT books.bookId, books.name, books.typeId, types.nname, books.pagecount, books.point FROM books INNER JOIN types ON books.typeId = types.typeId", myConnection);
                 SqlDataReader myReader = myCommand.ExecuteReader();
 
                 while(myReader.Read())
@@ -30,12 +30,10 @@ namespace HW05.Controllers
                     BooksViewModel book = new BooksViewModel();
                     book.bookID = (int)myReader["bookId"];
                     book.bookName = myReader["name"].ToString();
-                    //book.aSurname.surname = myReader["name"].ToString();
+                    book.Type.id = (int)myReader["typeId"];
+                    book.Type.name = myReader["nname"].ToString();
                     book.pageCount = (int)myReader["pagecount"];
                     book.point = (int)myReader["point"];
-                    //book.authorID = (int)myReader["authorId"];
-                    book.identif.id = (int)myReader["typeId"];
-                    book.descrip.name = myReader["name"].ToString();
                     bookList.Add(book);
                     //var orderByID = bookList.OrderByDescending(s => s.bookID);
                 }

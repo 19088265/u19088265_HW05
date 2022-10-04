@@ -9,9 +9,9 @@ namespace HW05.Models
     {
         public int authorID { get; set; }
 
-        public string name { get; set; }
+        public string authorName { get; set; }
 
-        public string surname { get; set; }
+        public string authorSurname { get; set; }
 
     }
 }

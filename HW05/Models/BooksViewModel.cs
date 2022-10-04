@@ -18,15 +18,13 @@ namespace HW05.Models
         public int point { get; set; }
 
         public int authorID { get; set; }
-        public TypeViewModel descrip { get; set; }
+        public TypeViewModel Type { get; set; }
 
-        public TypeViewModel identif { get; set; }
 
         public BooksViewModel()
         {
-            descrip = new TypeViewModel();
-            identif = new TypeViewModel();
-            
+
+            Type = new TypeViewModel();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace HW05.Controllers
 {
     public class HomeController : Controller
     {
-        SqlConnection myConnection = new SqlConnection("Data Source=HOPSI-39\\SYSARCH1;Integrated Security=True");
+        SqlConnection myConnection = new SqlConnection("Data Source=HOPSI-39\\SYSARCH1;Initial Catalog=Library;Integrated Security=True");
 
 
         public ActionResult Index()
@@ -30,8 +30,8 @@ namespace HW05.Controllers
                     BooksViewModel book = new BooksViewModel();
                     book.bookID = (int)myReader["bookId"];
                     book.bookName = myReader["name"].ToString();
-                    book.Type.id = (int)myReader["typeId"];
-                    book.Type.name = myReader["nname"].ToString();
+                    book.Type.ID = (int)myReader["typeId"];
+                    book.Type.Name = myReader["nname"].ToString();
                     book.pageCount = (int)myReader["pagecount"];
                     book.point = (int)myReader["point"];
                     bookList.Add(book);

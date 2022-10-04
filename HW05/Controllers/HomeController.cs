@@ -50,6 +50,39 @@ namespace HW05.Controllers
             return View(bookList);
         }
 
+        public ActionResult BasicSearch(string searchText)
+        {
+            try
+            {
+                myConnection.Open();
+
+                SqlCommand myBasicSearch = new SqlCommand(
+                    "SELECT books.bookId, books.name, books.typeId, types.nname, books.pagecount, books.point FROM books INNER JOIN types ON books.typeId = types.typeId WHERE book.name LIKE '%" + searchText + "%' ", myConnection);
+                SqlDataReader myReader = myBasicSearch.ExecuteReader();
+                while (myReader.Read())
+                {
+                    BooksViewModel book = new BooksViewModel();
+                    book.bookID = (int)myReader["bookId"];
+                    book.bookName = myReader["name"].ToString();
+                    book.Type.ID = (int)myReader["typeId"];
+                    book.Type.Name = myReader["nname"].ToString();
+                    book.pageCount = (int)myReader["pagecount"];
+                    book.point = (int)myReader["point"];
+                    bookList.Add(book);
+                }
+            }
+            catch
+            {
+
+            }
+            finally 
+            {
+            
+            }
+            
+            return View();
+        }
+
         public ActionResult BookDetails()
         {
 

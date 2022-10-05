@@ -131,7 +131,9 @@
     </Compile>
     <Compile Include="Models\AuthorsViewModel.cs" />
     <Compile Include="Models\BooksViewModel.cs" />
+    <Compile Include="Models\BorrowService.cs" />
     <Compile Include="Models\BorrowsViewModel.cs" />
+    <Compile Include="Models\StudentsViewModel.cs" />
     <Compile Include="Models\TypeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -272,14 +274,13 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Students\Students.cshtml" />
     <Content Include="Views\Home\BookDetails.cshtml" />
-    <Content Include="Views\Home\Students.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Data\" />
     <Folder Include="Views\Books\" />
-    <Folder Include="Views\Students\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

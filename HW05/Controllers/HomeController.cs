@@ -10,12 +10,12 @@ namespace HW05.Controllers
 {
     public class HomeController : Controller
     {
-        SqlConnection myConnection = new SqlConnection("Data Source=HOPSI-39\\SYSARCH1;Initial Catalog=Library;Integrated Security=True");
+        SqlConnection myConnection = new SqlConnection("Data Source=HOPGD-43\\SYSARCH1;Initial Catalog=Library;Integrated Security=True");
 
 
         public ActionResult Index()
         {
-            List<BooksViewModel> bookList = new List<BooksViewModel>();
+            //List<BooksViewModel> bookList = new List<BooksViewModel>();
             try
             {
                 myConnection.Open();
@@ -34,7 +34,7 @@ namespace HW05.Controllers
                     book.Type.Name = myReader["nname"].ToString();
                     book.pageCount = (int)myReader["pagecount"];
                     book.point = (int)myReader["point"];
-                    bookList.Add(book);
+                    Books.bookList.Add(book);
                     //var orderByID = bookList.OrderByDescending(s => s.bookID);
                 }
             }
@@ -47,7 +47,7 @@ namespace HW05.Controllers
                 myConnection.Close();
             }
             
-            return View(bookList);
+            return View(Books.bookList);
         }
 
         public ActionResult BasicSearch(string searchText)

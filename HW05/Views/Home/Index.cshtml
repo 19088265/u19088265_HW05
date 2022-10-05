@@ -25,7 +25,7 @@
 
     <!--Operation field-->
     <div>
-        <form>
+        
 
             @using (Html.BeginForm("BasicSearch", "Home", FormMethod.Post, new { style = "" }))
              {
@@ -43,7 +43,7 @@
                             @foreach (BooksViewModel book in Model)
 
                              {
-                                 <option value="1">@book.Type.Name</option>
+                                 <option value="1" name="bookTypeText">@book.Type.Name</option>
                              }
 
                         </select>
@@ -68,11 +68,13 @@
 
                     <!--Clear button-->
                     <div class="col">
-                        <button type="button" class="btn btn-danger" style="width:150px">Clear</button>
+                        <!-- <button type="button" class="btn btn-danger" style="width:150px">Clear</button> -->
+
+                        <a href="@Url.Action("Index", "Home")" class="btn btn-danger" title="Clear Search" style = "width: 150px; height:37px">Clear Search<span></span></a>
                     </div>
                 </div>
              }
-        </form>
+        
     </div>
 
 
@@ -103,7 +105,8 @@
                         <td>@book.point</td>
                         <td>Out</td>
                         <td>
-                            <button type="button" class="btn btn-primary">View</button>
+                            <!-- <button type="button" class="btn btn-primary">View</button> -->
+                            @Html.ActionLink("View", "BookDetails", "Home", new {@class = "btn btn-primary"})
                         </td>
                     </tr>
                  }

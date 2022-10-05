@@ -1,0 +1,91 @@
+﻿@model List<HW05.Models.StudentsViewModel>
+@using HW05.Models;
+@{ 
+    ViewBag.Title = "Students"; 
+    
+}
+
+<body style="margin-left:-150px">
+
+    <div>
+        <h2 style="margin-top:50px; margin-bottom:30px">
+            Students
+        </h2>
+    </div>
+
+    <div class="dropdown-divider" style="margin-bottom:20px"></div>
+
+    <!--Operation field-->
+    <div>
+         @using (Html.BeginForm("SimpleSearch", "Students", FormMethod.Post, new { style = "" }))
+            {
+             <div class="form-row">
+                <div class="col-lg-4">
+                    <input type="text" name="searchName" class="form-control" placeholder="Search Student Name" style="width:250px" />
+                </div>
+
+                <!--Select class type dropdown-->
+                <div class="col">
+                    <select class="form-control">
+                        <option selected>Select Class</option>
+                        @foreach(StudentsViewModel student in Model)
+
+                         {
+                             <option value="1">@student.sClass</option>
+                         }
+
+                    </select>
+
+                </div>
+
+
+                <!--Search button-->
+                <div class="col">
+                    <button type="submit" class="btn btn-success" style="width:150px">Search</button>
+                </div>
+
+                <!--Clear button-->
+                <div class="col">
+                    <a href="@Url.Action("Students", "Students")" class="btn btn-danger" title="Clear Search" style="width: 150px; height:37px">Clear Search<span></span></a>
+                </div>
+            </div>
+            }
+            
+        
+    </div>
+
+    <!--Students table-->
+    <div>
+        <table class="table" style="margin-top:20px">
+            <thead>
+                <tr style="height:80px">
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Class</th>
+                    <th scope="col">Points</th>
+                    <th scope="col">Return Book</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (StudentsViewModel student in Model)
+                 {
+                    <tr>
+                         <td scope="row">@student.sID</td>
+                         <td>@student.sName</td>
+                         <td>@student.sSurname</td>
+                         <td>@student.sClass</td>
+                         <td>@student.sPoint</td>
+                         <td>
+                             <button type="button" class="btn btn-primary">Return Book</button>
+                         </td>
+                    </tr>
+                 }
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+

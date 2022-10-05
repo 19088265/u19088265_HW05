@@ -1,7 +1,7 @@
 ﻿
-@{
-    ViewBag.Title = "View";
-}
+@{ 
+    ViewBag.Title = "Book Details";
+ }
 
 <body style="margin-left:-150px">
     <div>
@@ -17,7 +17,9 @@
             # Borrows -
         </h4>
 
-        <button type="button" class="btn btn-primary" style="position:absolute; right:480px">View Students</button>
+        <!-- <button type="button" class="btn btn-primary" style="position:absolute; right:480px">View Students</button> -->
+
+        @Html.ActionLink("View Students", "Students", "Students", null, new { @class = "btn btn-primary", @style = "position:absolute; right:480px" })
 
     </div>
 
@@ -43,4 +45,5 @@
         </table>
     </div>
 </body>
+
 

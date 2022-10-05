@@ -10,6 +10,7 @@ namespace HW05.Controllers
     public static class Books
     {
         public static List<BooksViewModel> bookList = new List<BooksViewModel>();
+        public static List<StudentsViewModel> studentList = new List<StudentsViewModel>();
     }
-        
+ 
 }

@@ -10,7 +10,7 @@ namespace HW05.Controllers
 {
     public class HomeController : Controller
     {
-        SqlConnection myConnection = new SqlConnection("Data Source=HOPGD-43\\SYSARCH1;Initial Catalog=Library;Integrated Security=True");
+        SqlConnection myConnection = new SqlConnection("Data Source=INFB1-07\\SQLEXPRESS;Initial Catalog=Library;Integrated Security=True");
 
 
         public ActionResult Index()
@@ -57,7 +57,7 @@ namespace HW05.Controllers
                 myConnection.Open();
 
                 SqlCommand myBasicSearch = new SqlCommand(
-                    "SELECT books.bookId, books.name, books.typeId, types.nname, books.pagecount, books.point FROM books INNER JOIN types ON books.typeId = types.typeId WHERE book.name LIKE '%" + searchText + "%' ", myConnection);
+                    "SELECT books.bookId, books.name, books.typeId, types.nname, books.pagecount, books.point FROM books INNER JOIN types ON books.typeId = types.typeId WHERE books.name LIKE '%" +searchText+ "%' ", myConnection);
                 SqlDataReader myReader = myBasicSearch.ExecuteReader();
                 Books.bookList.Clear();
                 while (myReader.Read())
@@ -87,6 +87,24 @@ namespace HW05.Controllers
         public ActionResult BookDetails()
         {
 
+            try
+            {
+                myConnection.Open();
+
+                //Read data
+                SqlCommand myCommand = new SqlCommand(
+                    "SELECT borrows.borrowId, borrows.takenDate, borrows.broughtDate, students.name, students.surname FROM borrows INNER JOIN books ON borrows.bookId = books.bookId", myConnection);
+
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+
+            }
+            
             return View();
         }
 

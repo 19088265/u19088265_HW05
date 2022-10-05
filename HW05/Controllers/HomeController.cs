@@ -59,6 +59,7 @@ namespace HW05.Controllers
                 SqlCommand myBasicSearch = new SqlCommand(
                     "SELECT books.bookId, books.name, books.typeId, types.nname, books.pagecount, books.point FROM books INNER JOIN types ON books.typeId = types.typeId WHERE book.name LIKE '%" + searchText + "%' ", myConnection);
                 SqlDataReader myReader = myBasicSearch.ExecuteReader();
+                Books.bookList.Clear();
                 while (myReader.Read())
                 {
                     BooksViewModel book = new BooksViewModel();

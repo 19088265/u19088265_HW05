@@ -68,19 +68,19 @@ namespace HW05.Controllers
                     book.Type.Name = myReader["nname"].ToString();
                     book.pageCount = (int)myReader["pagecount"];
                     book.point = (int)myReader["point"];
-                    //bookList.Add(book);
+                    Books.bookList.Add(book);
                 }
             }
-            catch
+            catch(Exception err)
             {
-
+                ViewBag.Message = "Error: " + err.Message;
             }
             finally 
             {
-            
+                myConnection.Close();
             }
             
-            return View();
+            return View("Index", Books.bookList);
         }
 
         public ActionResult BookDetails()
